@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creatio Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="quiz">
+
+    <section id="screen-home" class="screen">
+      <h1 class="home-title">Creatio Quiz</h1>
+      <p class="home-subtitle">Practice for the Creatio certification</p>
+
+      <div class="mode-selector">
+        <select id="quiz-mode" class="mode-select">
+          <option value="all">All questions</option>
+          <option value="random-30">Random 30</option>
+          <option value="range-1-30">Questions 1–30</option>
+          <option value="range-31-60">Questions 31–60</option>
+          <option value="range-61-90">Questions 61–90</option>
+          <option value="range-91-120">Questions 91–120</option>
+        </select>
+      </div>
+
+      <div class="home-buttons">
+        <button class="btn-action btn-filled" id="btn-start">START TEST</button>
+        <button class="btn-action" id="btn-questions">VIEW QUESTIONS</button>
+      </div>
+    </section>
+
+    <section id="screen-quiz" class="screen" hidden>
+      <header class="quiz-header">
+        <span class="question-counter" id="question-counter">QUESTION: 1 OF 1 QUESTIONS</span>
+        <div class="timer">
+          <svg class="timer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span id="timer-text">30:00</span>
+        </div>
+      </header>
+
+      <h1 class="question-text" id="question-text"></h1>
+      <p class="multi-hint" id="multi-hint" hidden>Select all that apply.</p>
+
+      <div class="options" id="options"></div>
+
+      <div class="actions">
+        <button id="action-btn" class="btn-action" disabled>ANSWER</button>
+      </div>
+    </section>
+
+    <section id="screen-results" class="screen" hidden>
+      <h1 class="results-title">Quiz complete</h1>
+      <p class="results-score" id="results-score"></p>
+      <h2 class="results-wrong-title" id="results-wrong-title">Incorrect answers</h2>
+      <div class="results-wrong" id="results-wrong"></div>
+      <div class="actions">
+        <button class="btn-action" id="btn-retry-wrong" hidden>RETRY WRONG</button>
+        <button class="btn-action" id="btn-results-home">BACK TO HOME</button>
+      </div>
+    </section>
+
+    <section id="screen-questions" class="screen" hidden>
+      <header class="page-header">
+        <button class="btn-back" id="btn-questions-back">← Back</button>
+        <h1 class="page-title">Questions</h1>
+      </header>
+
+      <div class="questions-list" id="questions-list"></div>
+    </section>
+
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
