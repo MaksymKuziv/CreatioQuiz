@@ -128,7 +128,7 @@ function renderQuestion() {
   el.multiHint.hidden = q.type !== 'multi';
 
   el.options.innerHTML = '';
-  q.options.forEach(opt => {
+  shuffle(q.options).forEach(opt => {
     const node = document.createElement('div');
     node.className = 'option';
     node.dataset.type = q.type;
